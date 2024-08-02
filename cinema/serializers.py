@@ -82,3 +82,7 @@ class MovieSessionListSerializer(serializers.ModelSerializer):
 class MovieSessionRetrieveSerializer(MovieSessionSerializer):
     movie = MovieListSerializer(many=False)
     cinema_hall = CinemaHallSerializer(many=False)
+
+    class Meta:
+        model = MovieSession
+        fields = ("id", "show_time", "movie", "cinema_hall")
